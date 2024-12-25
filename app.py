@@ -16,4 +16,4 @@ def webhook():
     return "Received", 200
 
 if __name__ == "__main__":
-    app.run()
+    app.run(int(os.environ.get('PORT', 5000)))
