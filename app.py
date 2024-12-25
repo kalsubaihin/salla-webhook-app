@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     return "Hello, Heroku!"
 
-@app.route('/webhook', methods=['GET'])
+@app.route('/webhook', methods=['POST'])
 def webhook():
     print('In webhook')
     data = request.json  # Parse the JSON payload
@@ -16,4 +16,4 @@ def webhook():
     return "Received", 200
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run()
