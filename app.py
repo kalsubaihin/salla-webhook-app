@@ -3,7 +3,11 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route("/")
+def home():
+    return "Hello, Heroku!"
+
+@app.route('/webhook', methods=['GET'])
 def webhook():
     print('In webhook')
     data = request.json  # Parse the JSON payload
